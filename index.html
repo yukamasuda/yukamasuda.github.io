@@ -1,62 +1,68 @@
 <!DOCTYPE html>
 <html lang="ja" ng-app="myapp">
-    <head>
-        <meta charset="utf-8" />
-        <title>Angularの練習</title>
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
-        <script src="myscript.js"></script>
-        <style>
-            .even {
-                background: #ccc;
-            }
-            .odd {
-                background: #ddd;
-            }
-        </style>
-    </head>
-    <body>
-        <h1>AngularJSの練習</h1>
-        <!--
-        <input type="text" ng-model="name">
-        <p>こんにちは！{{name}}</p>
-        <p>こんにちは！{{ 5*3 }}</p>-->
-        <div ng-controller="MainController">
-            <form novalidate name="myForm" ng-submit="addUser()">
-                <p>Name:
-                    <input type="text" name="name" ng-model="user.name" required ng-minlength="5" ng-maxlength="8">
-                    <span ng-show="myForm.name.$error.required">Required!</span>
-                    <span ng-show="myForm.name.$error.minlength">Too short!</span>
-                    <span ng-show="myForm.name.$error.maxlength">Too long!</span>
-                </p>
-                <p>Score:
-                    <input type="number" name="score" ng-model="user.score">
-                </p>
-                <p>Email:
-                    <input type="email" name="email" ng-model="user.email">
-                    <span ng-show="myForm.email.$error.email">Not valid email</span>
-                </p>
-                 <p>Web:
-                    <input type="url" name="url" ng-model="user.url">
-                    <span ng-show="myForm.url.$error.url">Not valid web</span>
-                </p>
-              <p><input type="submit" value="add"></p>
-            </form>
-            <pre>{{user|json}}</pre>
-            <!--
-            <p><input type="text" ng-model="query.name"></p>
-            <p>{{users.length}} users.</p>
-            <p>{{25*500|number}}</p>
-            <p>{{25*500|currency:"￥"}}</p>
-            <p>{{today|date:'yyyy-MM-dd'}}</p>
-           <ul>
-               <li ng-repeat="user in users" ng-class-even="'even'" ng-class-odd="'odd'">
-                   {{$index+1}} {{$first}} {{$middle}} {{$last}} {{user.name}} {{user.score}}
-                </li>
-               <li ng-repeat="user in users" ng-controller="userItemController">
-                   {{user.name}} {{user.score}}
-                   <button ng-click="increment()">+1</button>
-               </li>
-            </ul>-->
-        </div>
-    </body>
+<head>
+	<meta charset="utf-8" />
+	<title>練習</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+	<script src="https://maps.google.com/maps/api/js" async defer></script>
+	<script src="myscript.js"></script>
+	<script src="map.js"></script>
+	<link rel="stylesheet" href="./css/test.css">
+	<style>
+		.even {
+			background: #ccc;
+		}
+		.odd {
+			background: #ddd;
+		}
+	</style>
+</head>
+<body>
+	<!--
+	<h1>AngularJSの練習</h1>
+	<input type="text" ng-model="name">
+	<p>こんにちは！{{name}}</p>
+	<p>こんにちは！{{ 5*3 }}</p>
+	<div ng-controller="MainController">
+		<form novalidate name="myForm" ng-submit="addUser()">
+			<p>Name:
+				<input type="text" name="name" ng-model="user.name" required ng-minlength="5" ng-maxlength="8">
+				<span ng-show="myForm.name.$error.required">Required!</span>
+				<span ng-show="myForm.name.$error.minlength">Too short!</span>
+				<span ng-show="myForm.name.$error.maxlength">Too long!</span>
+			</p>
+			<p>Score:
+				<input type="number" name="score" ng-model="user.score">
+			</p>
+			<p>Email:
+				<input type="email" name="email" ng-model="user.email">
+				<span ng-show="myForm.email.$error.email">Not valid email</span>
+			</p>
+				<p>Web:
+				<input type="url" name="url" ng-model="user.url">
+				<span ng-show="myForm.url.$error.url">Not valid web</span>
+			</p>
+			<p><input type="submit" value="add"></p>
+		</form>
+		<pre>{{user|json}}</pre>
+		<p><input type="text" ng-model="query.name"></p>
+		<p>{{users.length}} users.</p>
+		<p>{{25*500|number}}</p>
+		<p>{{25*500|currency:"￥"}}</p>
+		<p>{{today|date:'yyyy-MM-dd'}}</p>
+		<ul>
+			<li ng-repeat="user in users" ng-class-even="'even'" ng-class-odd="'odd'">
+				{{$index+1}} {{$first}} {{$middle}} {{$last}} {{user.name}} {{user.score}}
+			</li>
+			<li ng-repeat="user in users" ng-controller="userItemController">
+				{{user.name}} {{user.score}}
+				<button ng-click="increment()">+1</button>
+			</li>
+		</ul>
+	</div>
+	-->
+
+	<h2>Google Mapで検索する</h2>
+	<div id="map"></div>
+</body>
 </html>
