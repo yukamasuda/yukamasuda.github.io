@@ -27,8 +27,9 @@
 	width: 78px;
 	height: 140px;
 	background: rgba(255,255,255,0.2);
-	mask-image: url("../images/8.png");
-	-webkit-mask-image: url("../images/8.png");/**/
+	mask-image: url("../images/8.svg");
+	-webkit-mask-image: url("../images/8.svg");
+	-webkit-mask-image: url("../images/8.png");
 }
 
 .eight_top {
@@ -38,18 +39,8 @@
 	width: 72px;
 	height: 72px;
 	transform: rotate(-135deg);
-	transition: transform .2s;
-}
-
-.eight_top:before {
-	content: '';
-	display: block;
-	position: absolute;
-	top: -35px;
-	left:  -35px;
-	background: url("../images/hikari.png") no-repeat center center;
-	width: 95px;
-	height: 96px;
+	opacity: 0;
+	transition:  opacity 1s;
 }
 
 .eight_bottom {
@@ -59,14 +50,17 @@
 	width: 80px;
 	height: 80px;
 	transform: rotate(45deg);
+	opacity: 0;
+	transition:  opacity 1s .5s;
 }
 
+.eight_top:before,
 .eight_bottom:before {
 	content: '';
 	display: block;
 	position: absolute;
 	top: -35px;
-	left:  -34px;
+	left:  -35px;
 	background: url("../images/hikari.png") no-repeat center center;
 	width: 95px;
 	height: 96px;
@@ -83,15 +77,19 @@
 	animation: logoAnimeTop 1s  ;
 	animation-fill-mode: forwards;
 	animation-timing-function: ease-in;
+	opacity: 0.5;
 }
 @-webkit-keyframes logoAnimeTop {
 	0%{
+		-webkit-transform: rotate(-135deg);
 		transform: rotate(-135deg);
 	}
 	55%{
+		-webkit-transform: rotate(225deg);
 		transform: rotate(225deg);
 	}
 	100%{
+		-webkit-transform: rotate(225deg);
 		transform: rotate(225deg);
 	}
 }
@@ -100,15 +98,19 @@
 	animation: logoAnimeBottom 1s  ;
 	animation-fill-mode: forwards;
 	animation-timing-function: ease-out;
+	opacity: 1;
 }
 @-webkit-keyframes logoAnimeBottom {
 	0%{
+		-webkit-transform: rotate(45deg);
 		transform: rotate(45deg);
 	}
 	55%{
+		-webkit-transform: rotate(45deg);
 		transform: rotate(45deg);
 	}
 	100%{
+		-webkit-transform: rotate(-315deg);
 		transform: rotate(-315deg);
 	}
 }
@@ -132,6 +134,8 @@
 	letter-spacing: 0.15em;
 	padding-left: 0.075em;
 }
+
+
 		</style>
 	</head>
 	<body style="background: #02f0f6;">
