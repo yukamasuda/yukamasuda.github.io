@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>ルーレット</title>
+	<style>
+	body {
+		text-align: center;
+	}
+	ul,li {
+		margin: 0;
+		padding: 0;
+	}
+	.viewarea {
+		height:300px;
+		overflow: hidden;
+		position: relative;
+		width: 100%;
+	}
+	.wrapper {
+		width: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+	.shoplist li {
+		height: 100px;
+		line-height: 100px;
+		font-size: 50px;
+		width: 100%;
+		text-align: center;
+	}
+	.shoplist li:nth-child(1) {
+		background: #000;
+		color: #fff;
+	}
+	.shoplist li:nth-child(2) {
+		background: #696969;
+	}
+	.shoplist li:nth-child(3) {
+			background: #808080;
+	}
+	.shoplist li:nth-child(4) {
+		background: #a9a9a9;
+	}
+	.shoplist li:nth-child(5) {
+		background: #c0c0c0;
+	}
+	.shoplist li:nth-child(6) {
+			background: #d3d3d3;
+	}
+	.shoplist li:nth-child(7) {
+		background: #dcdcdc;
+	}
+	.shoplist li:nth-child(8) {
+		background: #f5f5f5;
+	}
+	.shoplist li:nth-child(9) {
+			background: #fff;
+	}
+	.shoplist li:nth-child(10) {
+			background: #fffafa;
+	}
+	</style>
+</head>
+<body>
+	<h1>ルーレット</h1>
+	<div>
+		<div class="viewarea">
+			<div class="wrapper">
+				<ul class="shoplist">
+					<li>お店1</li>
+					<li>お店2</li>
+					<li>お店3</li>
+					<li>お店4</li>
+					<li>お店5</li>
+					<li>お店6</li>
+					<li>お店7</li>
+					<li>お店8</li>
+					<li>お店9</li>
+					<li>お店10</li>
+				</ul>
+			</div>
+		</div>
+		<button id="button">START</button>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script src="./jquery.easie-min.js"></script>
+	<script>
+	$(function(){
+		var count = 0;
+		var listlength = $('.shoplist').find('li').length;
+		var rollingSpeed = 100;
+		var listHeirouleght = 100;
+		var timer;
+
+		function startTimer() {
+			timer = setInterval (function() {
+				rollList();
+			},rollingSpeed);
+		}
+
+		function stopTimer() {
+			clearInterval(timer);
+		}
+
+		$('.shoplist').clone().appendTo('.wrapper');
+		function rollList() {
+			count ++;
+			$('.wrapper').animate({'top':  '-=' + listHeight+'px'},rollingSpeed,'easieEaseIn',
+				function() {
+					positionInit();
+				});
+		}
+		function positionInit() {
+			if(count % listlength == 0){
+				$('.wrapper').css({'top':0});
+				count = 0;
+			}
+		}
+		$('#button').on('click',function () {
+			if($(this).hasClass('is_stop')){
+				$(this).removeClass('is_stop').html('START');
+				stopTimer();
+			}else {
+				$(this).addClass('is_stop').html('STOP');
+				startTimer();
+			}
+		});
+	});
+
+	</script>
+</body>
+</html>
