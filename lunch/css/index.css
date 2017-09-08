@@ -1,0 +1,171 @@
+body {
+	text-align: center;
+	font-family: "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 500;
+}
+#preload:after {
+	background: url("../images/btn_start_hover.png"),
+		url("../images/btn_start_active.png"),
+		url("../images/btn_stop.png"),
+		url("../images/btn_stop_hover.png"),
+		url("../images/btn_stop_active.png");
+	content: '';
+	display: block;
+}
+
+html,body {
+	background: #005ba5;
+	height: 100%;
+}
+
+#main_container {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	text-align: center;
+}
+
+.main {
+	margin: 0 auto;
+	width: 100%;
+}
+#roulette {
+	background: url("../images/bg.gif");
+	margin-bottom: 80px;
+	height: 320px;
+	margin-top: 80px;
+	overflow: hidden;
+	position: relative;
+}
+#roulette:before {
+	content: '';
+	display: block;
+	width: 100%;
+	height: 14px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+ 	box-shadow: inset 0px 14px 0px 0px rgba(0, 0, 0, 0.25);
+}
+
+ul,li {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+.ttl {
+	margin: 0;
+}
+.viewarea {
+	height:320px;
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+}
+.wrapper {
+	width: 100%;
+	position: absolute;
+	bottom: -80px;
+	left: 0;
+}
+.shoplist li {
+	color: #fff;
+	height: 160px;
+	line-height: 160px;
+	font-size: 50px;
+	font-weight: 700;
+	letter-spacing: 0.2em;
+	transform: scale(0.85,1);
+	width: 100%;
+	text-align: center;
+	white-space: nowrap;
+}
+.shoplist li.result {
+	color: #ffff00;
+	transform: scale(2.04,2.4);
+	transition: transform .7s .2s cubic-bezier(0.68, -0.55, 0.265, 1.55), color .7s .2s  cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+
+
+
+.shoplist li:nth-child(2) {
+	/*font-size: 100px;*/
+}
+button {
+	background: none;
+	border: none;
+	outline: none;
+	cursor: pointer;
+}
+#button {
+	width: 310px;
+	height: 90px;
+	background: url("../images/btn_start.png");
+}
+#button:hover {
+	background: url("../images/btn_start_hover.png");
+}
+#button:active {
+	background: url("../images/btn_start_active.png");
+}
+#button.is_stop {
+	background: url("../images/btn_stop.png");
+}
+#button.is_stop:hover {
+	background: url("../images/btn_stop_hover.png");
+}
+#button.is_stop:active {
+	background: url("../images/btn_stop_active.png");
+}
+
+
+@media screen and (max-width: 641px) {
+	body {
+	}
+	.ttl {
+		width: 100%;
+	}
+	.ttl img {
+		width:300px;
+	}
+	#roulette {
+		margin-bottom: 20px;
+		margin-top: 15px;
+	}
+	#button {
+		width: 150px;
+		height: 45px;
+	}
+
+	#button,
+	#button:hover,
+	#button:active,
+	#button.is_stop,
+	#button.is_stop:hover,
+	#button.is_stop:active {
+		background-size: 100% auto;
+		background-repeat: no-repeat;
+	}
+
+	#roulette {
+		height: 160px;
+	}
+
+	.wrapper {
+		bottom: -40px;
+	}
+
+	.viewarea {
+		height: 160px;
+	}
+	.shoplist li {
+		font-size: 25px;
+		height: 80px;
+		line-height: 80px;
+	}
+	.shoplist li.result {
+		transform: scale(1.53,1.8);
+	}
+}
