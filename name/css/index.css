@@ -1,0 +1,265 @@
+@charset "utf-8";
+/*------------------------------------------------------------
+	デフォルトスタイル
+------------------------------------------------------------*/
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, dialog, figure, footer, header,
+hgroup, menu, nav, section,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+
+	font-size: 1em;
+}
+
+article, aside, dialog, figure, footer, header, nav, section {
+	display: block;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body, table,
+input, textarea, select, option {
+	font-family: 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+	line-height: 1.1;
+}
+
+table,
+input, textarea, select, option {
+	line-height: 1.1;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+:focus {
+	outline: 0;
+}
+
+ins {
+	text-decoration: none;
+}
+
+del {
+	text-decoration: line-through;
+}
+
+a:link {
+
+}
+
+a:visited {
+
+}
+
+a:hover {
+
+}
+
+a:active {
+
+}
+
+/*------------------------------------------------------------
+	書式設定
+------------------------------------------------------------*/
+/* テキストの位置 */
+.taLeft { text-align: left !important; }
+.taCenter { text-align: center !important; }
+.taRight { text-align: right !important; }
+
+/* フォントの大きさ（プラス） */
+.fsP1 { font-size: 1.08em !important; }
+.fsP2 { font-size: 1.16em !important; }
+.fsP3 { font-size: 1.24em !important; }
+.fsP4 { font-size: 1.32em !important; }
+.fsP5 { font-size: 1.4em !important; }
+
+/* フォントの大きさ（マイナス） */
+.fsM1 { font-size: 0.92em !important; }
+.fsM2 { font-size: 0.84em !important; }
+.fsM3 { font-size: 0.76em !important; }
+.fsM4 { font-size: 0.68em !important; }
+.fsM5 { font-size: 0.6em !important; }
+
+/* フォントの太さ */
+.fwNormal { font-weight: normal !important; }
+.fwBold { font-weight: bold !important; }
+
+/*------------------------------------------------------------
+	微調整用クラス（※多用しないこと）
+------------------------------------------------------------*/
+.mt0 { margin-top: 0 !important; }
+.mb0 { margin-bottom: 0 !important; }
+
+/*------------------------------------------------------------
+	clearfix
+------------------------------------------------------------*/
+	* html .clearfix {
+		zoom: 1;
+	}
+
+	*+html .clearfix {
+		zoom: 1;
+	}
+
+.clearfix:after {
+	height: 0;
+	visibility: hidden;
+	content: ".";
+	display: block;
+	clear: both;
+}
+
+/*------------------------------------------------------------
+	レイアウト
+------------------------------------------------------------*/
+body {
+	min-width: 800px;	/* 狭いウインドウ幅で横スクロール時に背景が切れるバグ対策でコンテンツと同じ幅を指定 */
+	line-height: 1.5;
+	text-align: center;
+}
+
+#container {
+	margin: 0 auto;
+	padding: 50px 0;
+	width: 800px;
+	background-color: #fff;
+	text-align: left;
+}
+
+#main {
+	margin-bottom: 10px;
+	font-size: 1.4em;
+}
+
+	* html #main {
+		zoom: 1;
+	}
+
+	*+html #main {
+		zoom: 1;
+	}
+
+#main:after {
+	height: 0;
+	visibility: hidden;
+	content: ".";
+	display: block;
+	clear: both;
+}
+
+/*------------------------------------------------------------
+	コンテンツ
+------------------------------------------------------------*/
+#conts {
+	width: 100%;
+}
+
+#conts h1 {
+	font-size: 1.8em;
+	margin-bottom: 26px;
+}
+
+#conts .catch {
+	margin-bottom: 26px;
+	font-size: 1.5em;
+}
+
+#conts h2 {
+	margin-bottom: 13px;
+	font-size: 1.4em;
+	font-weight: normal;
+}
+
+#conts table {
+	margin-bottom: 13px;
+	width: 100%;
+	border-collapse: collapse;
+}
+
+#conts .type {
+	width: 48%;
+	float: left;
+}
+
+#conts .region {
+	width: 48%;
+	float: right;
+}
+
+#conts table th,
+#conts table td {
+	padding: 7px 10px;
+	font-size: 1.3em;
+	line-height: 1.5;
+	vertical-align: middle;
+	border: 1px solid #CCC;
+}
+
+#conts table th {
+	font-weight: bold;
+	text-align: center;
+	color: #FFF;
+	background-color: #000;
+}
+
+#conts table td {
+	font-weight: normal;
+	text-align: left;
+}
+
+#conts table .col01 {
+	width: 50%;
+}
+
+#conts table .col03,
+#conts table .col04,
+#conts table .col05 {
+	width: 25%;
+	border: 1px dotted #CCC;
+}
+
+#conts table .col01,
+#conts table .col03,
+#conts table .col05 {
+	background: #F6F6F6;
+}
+
+#conts .notes li {
+	margin: 0 0 13px 0;
+	font-size: 1.2em;
+	line-height: 1.75;
+}
+
+#conts .type .notes li {
+	margin: 0 0 13px 2em;
+	text-indent: -2em;
+}
+
+#conts .pdf p {
+	font-size: 1.3em;
+	text-align: center;
+	clear: both;
+}
+
+#conts .pdf p a:hover {
+	text-decoration: none;
+}

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>画像ファイル名｜チートシート</title>	
+	<link href="css/index.css" rel="stylesheet">
+</head>
+<body>
+
+	<div id="container">
+		<div id="conts" class="clearfix">
+			<h1>画像ファイル名</h1>
+			<p class="catch">「ページ名」_「部位」_「種類：必須」_「詳細」「番号(連番)」_「状態」.「拡張子」</p>
+			<section class="type">
+				<h2>・種類</h2>
+				<table>
+					<colgroup>
+						<col class="col01">
+						<col class="col02">
+					</colgroup>
+					<tr>
+						<th>種類</th>
+						<th>規則</th>
+					</tr>
+					<tr>
+						<td>画像、図、写真</td>
+						<td>img</td>
+					</tr>
+					<tr>
+						<td>サムネイル</td>
+						<td>thumb</td>
+					</tr>
+					<tr>
+						<td>バナー</td>
+						<td>bnr</td>
+					</tr>
+					<tr>
+						<td>ボタン</td>
+						<td>btn</td>
+					</tr>
+					<tr>
+						<td>ロゴ</td>
+						<td>logo</td>
+					</tr>
+					<tr>
+						<td>ナビ</td>
+						<td>nav</td>
+					</tr>
+					<tr>
+						<td>見出し ※１</td>
+						<td>ttl</td>
+					</tr>
+					<tr>
+						<td>テキスト</td>
+						<td>txt</td>
+					</tr>
+					<tr>
+						<td>アイコン</td>
+						<td>icon</td>
+					</tr>
+					<tr>
+						<td>（アイコン以外の）背景</td>
+						<td>bg</td>
+					</tr>
+					<tr>
+						<td>矢印</td>
+						<td>arrow</td>
+					</tr>
+					<tr>
+						<td>線</td>
+						<td>line</td>
+					</tr>
+					<tr>
+						<td>ページトップ ※２</td>
+						<td>pagetop</td>
+					</tr>
+					<tr>
+						<td>スペーサー ※２</td>
+						<td>spacer</td>
+					</tr>
+					<tr>
+						<td>ロード中 ※２</td>
+						<td>loading</td>
+					</tr>
+				</table>
+				<ul class="notes">
+					<li>※１見出し要素(hx)に使用する画像は、hxの名称を付けない方が、見出しレベルが変更になった際に、画像名の変更を伴わないため更新性が高い。</li>
+					<li>※２単独で使用することが多いため、「種類」のみで使用する。<br>
+						例）ページトップ &gt; pagetop.gif<br>
+						　　スペーサー &gt;  spacer.gif</li>
+				</ul>
+			</section>
+			
+			<section class="region">
+				<h2>・部位</h2>
+				<table>
+					<colgroup>
+						<col class="col01">
+						<col class="col02">
+					</colgroup>
+					<tr>
+						<th>部位</th>
+						<th>規則</th>
+					</tr>
+					<tr>
+						<td>新着情報 / お知らせ</td>
+						<td>news, infos</td>
+					</tr>
+					<tr>
+						<td>ブログ</td>
+						<td>blog</td>
+					</tr>
+					<tr>
+						<td>お問い合わせ</td>
+						<td>contact</td>
+					</tr>
+					<tr>
+						<td>ページ全体</td>
+						<td>container, wrapper</td>
+					</tr>
+					<tr>
+						<td>ヘッダー</td>
+						<td>header</td>
+					</tr>
+					<tr>
+						<td>サイドバー</td>
+						<td>side</td>
+					</tr>
+					<tr>
+						<td>フッター</td>
+						<td>footer</td>
+					</tr>
+					<tr>
+						<td>メインコンテンツ</td>
+						<td>main</td>
+					</tr>
+					<tr>
+						<td>サブコンテンツ</td>
+						<td>sub</td>
+					</tr>
+					<tr>
+						<td>セクション</td>
+						<td>section</td>
+					</tr>
+					<tr>
+						<td>記事</td>
+						<td>article</td>
+					</tr>
+					<tr>
+						<td>コピーライト</td>
+						<td>copyright</td>
+					</tr>
+					<tr>
+						<td>次へ</td>
+						<td>next</td>
+					</tr>
+					<tr>
+						<td>前へ</td>
+						<td>prev</td>
+					</tr>
+					<tr>
+						<td>リスト</td>
+						<td>list</td>
+					</tr>
+					<tr>
+						<td>注釈</td>
+						<td>notes</td>
+					</tr>
+					<tr>
+						<td>広告</td>
+						<td>pr</td>
+					</tr>
+					<tr>
+						<td>レイアウトのためのボックス</td>
+						<td>unit, box, col, area</td>
+					</tr>
+				</table>
+				<ul class="notes">
+					<li>※「部位」とは使用している場所を示す。</li>
+					<li>使用する場所のid・class名を組み合わせて名前を付ける</li>
+				</ul>
+			</section>
+	
+			<!-- <div class="pdf">
+				<p>PDFファイルは<a href="pdf/file_cheatsheet.pdf" target="_blank">コチラ</a></p>
+			</div> -->
+		</div>
+	</div>
+	
+</body>
+</html>
