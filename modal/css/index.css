@@ -1,0 +1,130 @@
+/*
+	クラス名等は適宜変えてOK
+	コメントも消してOK
+*/
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	padding: 0 15px;
+	color: #55554b;
+	font-family: "Mplus 1p";
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+	background-color: #fbfbf8;
+}
+.timeline {
+	margin: 3em auto;
+	max-width: 500px;
+	list-style: none;
+	background-color: #fff;
+	box-shadow: 0 3px 20px rgba(184, 184, 141, 0.3);
+}
+.timeline > li {
+	padding: 1.4em 1.5em 1.4em 5em;
+	cursor: pointer;
+}
+.timeline > li + li {
+	border-top: 1px solid #eaeae0;
+}
+.timeline > li::after {
+	display: table;
+	content: '';
+	clear: both;
+}
+.timeline > li:hover {
+	background-color: #fdfdf6;
+}
+.avatar {
+	float: left;
+	margin-left: -3.5em;
+	width: 54px;
+	height: 54px;
+	border-radius: 100%;
+	background-color: #eee;
+}
+.content {
+	margin-left: .9em;
+}
+.content > span {
+	display: inline-block;
+	margin-bottom: .2em;
+	font-weight: bold;
+}
+.content > p {
+	text-align: justify;
+	text-justify: inter-ideograph;
+	line-height: 1.4;
+	font-size: .95em;
+}
+.overlay {
+	display: none;
+	position: fixed;
+	top: -10px;/* IE対応 */
+	left: 0;
+	right: 0;
+	bottom: -10px;/* IE対応 */
+	background-color: rgba(0, 0, 0, .45);
+	overflow: hidden;
+	overflow-y: auto;/* scrollにはしないことでスクロールの必要がないときはスクロールバーを表示させない */
+	-webkit-overflow-scrolling: touch;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden; /*iOSでのちらつきを抑える*/
+}
+.container {
+	display: table;
+	padding: 10px 0;/* IE対応 */
+	width: 100%;
+	height: 100%;
+}
+.inner {
+	display: table-cell;
+	padding: 2.7em 2em; /* モーダル外側の余白 */
+	vertical-align: middle;
+}
+.modal {
+	margin: 0 auto;
+	padding: 1.9em 2em;/* モーダル内側の余白 */
+	max-width: 550px;
+	text-align: justify;
+	text-justify: inter-ideograph;
+	border-radius: 7px;
+	background-color: #fff;
+	display: none;
+	box-shadow: 0 1px 5px rgba(0, 0, 0, .2);
+}
+.modal.is_show {
+	display: block;
+}
+.modal::after {
+	display: table;
+	content: '';
+	clear: both;
+}
+.modal > p {
+	text-indent: 1em;
+	line-height: 1.7;
+}
+.button {
+	float: right;
+	margin-top: .8em;
+	padding: .5em 1.4em;
+	color: #fff;
+	font-size: .95em;
+	border: 0;
+	border-radius: 4px;
+	outline: 0;
+	background-color: #e57373;
+	cursor: pointer;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+.button:hover {
+	background-color: #dd7979;
+}
