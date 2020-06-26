@@ -9,14 +9,43 @@
     <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
     <!-- we import arjs version without NFT but with marker + location based support -->
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <script>
+      AFRAME.registerComponent('registerevents', {
+          init: function () {
+              var marker = this.el;
+  
+              // マーカーを検出したイベントの登録
+              marker.addEventListener('markerFound', function () {
+                  var markerId = marker.id;
+                  console.log('markerFound', markerId);
+  
+                  // アニメーションの開始
+                  document.querySelector('#box').emit('markerfound');
+              });
+  
+              // マーカーを見失ったイベントの登録
+              marker.addEventListener('markerLost', function () {
+                  var markerId = marker.id;
+                  console.log('markerLost', markerId);
+  
+                  // アニメーションの停止
+                  document.querySelector('#box').emit('markerlost');
+              });
+          }
+      });
+  </script>
     <body style="margin : 0px; overflow: hidden;">
         <a-scene embedded arjs>
-        <a-marker preset="hiro">
+        <a-marker preset="hiro" registerevents>
             <!-- <a-entity
             position="0 -1 0"
             scale="0.05 0.05 0.05"
             gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/scene.gltf"
             ></a-entity> -->
+            <a-box id="box" position="0 0.5 0" wireframe="true">
+                <a-animation attribute="position" from="0 0.5 0" to="0 2.5 0" dur="5000" repeat="indefinite" begin="markerfound" end="markerlost">
+                </a-animation>
+            </a-box>
             <a-entity camera></a-entity>
         </a-marker>
         
