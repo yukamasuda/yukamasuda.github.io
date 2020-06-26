@@ -18,7 +18,7 @@
               marker.addEventListener('markerFound', function () {
                   var markerId = marker.id;
                   console.log('markerFound', markerId);
-  
+                alert('markerfound');
                   // アニメーションの開始
                   document.querySelector('#box').emit('markerfound');
               });
@@ -27,6 +27,7 @@
               marker.addEventListener('markerLost', function () {
                   var markerId = marker.id;
                   console.log('markerLost', markerId);
+                alert('markerLost');
   
                   // アニメーションの停止
                   document.querySelector('#box').emit('markerlost');
