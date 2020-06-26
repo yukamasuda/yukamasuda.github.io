@@ -26,7 +26,7 @@
               // マーカーを見失ったイベントの登録
               marker.addEventListener('markerLost', function () {
                   var markerId = marker.id;
-                  console.log('marker loost', markerId);
+                  console.log('marker lost', markerId);
   
                   // アニメーションの停止
                   document.querySelector('#box').emit('markerlost');
@@ -42,7 +42,7 @@
         <a-marker preset="hiro" registerevents id="box">
           <!-- ⑤ オブジェクトの追加 -->
           
-          <a-box position="0 0.5 0" animation="property: position; to: 0 2.5 0; dur: 2000; easing: linear; loop: true;startEvents:markerfound;resumeEvents:markerlost" color="tomato">
+          <a-box position="0 0.5 0" animation="property: position; to: 0 2.5 0; dur: 2000; easing: linear; startEvents:markerfound;resumeEvents:markerlost" color="tomato">
         </a-marker>
       
         <!-- ⑥ カメラを追加 -->
